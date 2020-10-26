@@ -223,6 +223,10 @@ open class SwipeCardStack: UIView, SwipeCardDelegate, UIGestureRecognizerDelegat
                           animated: animated) { [weak self] finished in
                             if finished {
                               self?.isAnimating = false
+                            } else {
+                              DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                self?.isAnimating = false
+                              }
                             }
     }
   }
